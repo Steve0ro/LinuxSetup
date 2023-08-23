@@ -1,7 +1,7 @@
 #!/bin/bash
 
-chown -R $USER:$USER /opt
-mkdir -p /opt/Tools/
+sudo chown -R $USER:$USER /opt
+sudo mkdir -p /opt/Tools/
 
 # Colors
 cyan='\e[96m'
@@ -25,14 +25,14 @@ if command_exists apt; then
 fi
 
 # Pyenv and other packages
-apt update -y && apt upgrade -y && apt update --fix-missing
+sudo apt update -y && sudo apt upgrade -y && sudo apt update --fix-missing
 
-apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev git libfuse2 gron jq binwalk foremost hexedit zsh cargo unzip tar unrar gron httpie libfuse2 highlight
+sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev git highlight gdb wget tmux curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev git libfuse2 gron jq binwalk foremost hexedit zsh cargo unzip tar unrar gron httpie libfuse2 highlight
 
 curl https://pyenv.run | bash
 
 # Install xq
-curl -sSL https://bit.ly/install-xq | bash
+curl -sSL https://bit.ly/install-xq | sudo bash
 
 # Astronvim
 mv ~/.config/nvim ~/.config/nvim.bak
@@ -41,7 +41,7 @@ mv ~/.local/share/nvim ~/.local/share/nvim.bak
 wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
 
 chmod 755 ./nvim.appimage
-mv nvim.appimage /usr/bin/nvim
+sudo mv nvim.appimage /usr/bin/nvim
 
 
 ## NodeJS
@@ -50,21 +50,20 @@ node_version=$(curl -sn https://nodejs.org/en/download | grep -Eo 'v[0-9]{2}\.[0
 n2=$(echo $node_version | grep -Eo 'node-v[0-9]{2}\.[0-9]{2}\.[0-9]-linux-x64.tar.xz')
 
 wget https://nodejs.org/dist/$node_version
-mkdir -p /usr/local/lib/nodejs
-tar -xJvf $n2 -C /usr/local/lib/nodejs
+sudo mkdir -p /usr/local/lib/nodejs
+sudo tar -xJvf $n2 -C /usr/local/lib/nodejs
 
 ## Go
 go_version=$(curl -sn https://go.dev/dl/ | grep -Eo 'go1\.20+\.[7-9]+\.linux-amd64\.tar\.gz' | sort -u)
 
 wget https://go.dev/dl/$go_version
-rm -rf /usr/local/go && tar -C /usr/local -xzf $go_version
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf $go_version
 
-apt dist-upgrade -y && apt autoclean -y && apt autoremove -y
-
+sudo apt dist-upgrade -y && sudo apt autoclean -y sudo && apt autoremove -y
 
 # Oh My ZSH install
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+echo "Y" | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
@@ -80,5 +79,14 @@ git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git /opt/Tools/sqlma
 git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim\
 
 #git clone https://github.com/Steve0ro/Empty/For/Now ~/.zshrc.main.bak
-echo "export PATH=/usr/local/lib/nodejs/$n2/bin:$PATH" >> ~/.zshrc.main.bak
+#echo "export PATH=/usr/local/lib/nodejs/$n2/bin:$PATH" >> ~/.zshrc.main.bak
 
+# 
+mv ./heapbytes.zsh-theme ~/.oh-my-zsh/themes/
+mv ./.zshrc ~/.zshrc
+
+source ~/.zshrc
+
+echo 'Build Done!'
+
+exit

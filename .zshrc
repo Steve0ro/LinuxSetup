@@ -12,7 +12,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 
 # ZSH Theme
-ZSH_THEME="darkblood"
+ZSH_THEME="heapbytes"
 
 # ZSH Plugins
 plugins=(
@@ -30,8 +30,6 @@ ZSH_TMUX_CONFIG=~/.tmux.conf
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
-FORMAT="\nID\t{{.ID}}\nIMAGE\t{{.Image}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.RunningFor}}\nSTATUS\t{{.Status}}\nPORTS\t{{.Ports}}\nNAMES\t{{.Names}}\n"
-
 autoload -U bashcompinit
 bashcompinit
 
@@ -41,9 +39,10 @@ eval "$(pyenv init -)"
 unalias gf
 alias ip="ip -c"
 alias sqlmap="python /opt/Tools/sqlmap-dev/./sqlmap.py"
-#alias vi='nvim'
-#alias vim='nvim'
+alias vi='nvim'
+alias vim='nvim'
 alias py='python'
+FORMAT="\nID\t{{.ID}}\nIMAGE\t{{.Image}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.RunningFor}}\nSTATUS\t{{.Status}}\nPORTS\t{{.Ports}}\nNAMES\t{{.Names}}\n"
 alias docker_ls='docker container ls --format=$FORMAT'
 alias grep='grep --color=always'
 alias colorMe='highlight -O xterm256'
