@@ -36,9 +36,9 @@ fi
 # Pyenv and other packages
 sudo apt update -y && sudo apt upgrade -y && sudo apt update --fix-missing
 
-sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev git highlight gdb wget tmux curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev git libfuse2 gron jq binwalk foremost hexedit zsh cargo unzip tar unrar gron httpie libfuse2 highlight gcc iputils-ping yara jq gron wget apt-transport-https software-properties-common zip zsh binwalk llvm build-essential  libssl-dev zlib1g-dev libbz2-dev libreadline-dev vim libsqlite3-dev curl libncursesw5-dev xz-utils  tk-dev tmux git libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev cargo  grep bgrep ngrep hexedit highlight libfuse2 libguestfs-tools  libpoppler-cpp-dev ltrace make libsqlite3-dev libncurses5-dev net-tools openjdk-17-jdk openjdk-17-jre  p7zip-full p7zip-rar poppler-utils reglookup sqlite3-tools tar tshark unrar unzip 
+sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev git highlight gdb wget tmux curl llvm libncurses5-dev zsh libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev git libfuse2 gron jq binwalk foremost hexedit zsh cargo unzip tar unrar gron httpie libfuse2 highlight gcc iputils-ping yara jq gron wget apt-transport-https software-properties-common zip zsh binwalk llvm build-essential  libssl-dev zlib1g-dev libbz2-dev libreadline-dev vim libsqlite3-dev curl libncursesw5-dev xz-utils  tk-dev tmux git libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev cargo grep ngrep hexedit highlight libfuse2 libguestfs-tools  libpoppler-cpp-dev ltrace make libsqlite3-dev libncurses5-dev net-tools openjdk-17-jdk openjdk-17-jre  p7zip-full p7zip-rar poppler-utils reglookup sqlite3-tools tar tshark unrar unzip 
 
-sudo sudo apt-get update --fix-missing && source /etc/os-release && wget -q https://packages.microsoft.com/config/ubuntu/$VERSION_ID/packages-microsoft-prod.deb && sudo dpkg -i packages-microsoft-prod.deb && rm packages-microsoft-prod.deb && sudo apt-get update && sudo apt-get install -y powershell && sudo ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime && dpkg-reconfigure --frontend noninteractive tzdata && sudo apt-get autoclean -y && sudo apt-get autoremove -y
+sudo sudo apt-get update --fix-missing && source /etc/os-release && wget -q https://packages.microsoft.com/config/ubuntu/$VERSION_ID/packages-microsoft-prod.deb && sudo dpkg -i packages-microsoft-prod.deb && rm packages-microsoft-prod.deb && sudo apt-get update && sudo apt-get install -y powershell && sudo ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime && sudo dpkg-reconfigure --frontend noninteractive tzdata && sudo apt-get autoclean -y && sudo apt-get autoremove -y
 
 
 curl https://pyenv.run | bash
@@ -79,7 +79,6 @@ git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim\
 
 #echo "export PATH=/usr/local/lib/nodejs/$n2/bin:$PATH" >> ~/.zshrc.main.bak
 
-# 
 mv ./steve0ro.zsh-theme ~/.oh-my-zsh/themes/
 mv ./.zshrc ~/.zshrc
 
