@@ -2,7 +2,7 @@
 # Insperation from heapbytes
 
 PROMPT='
-<-[%F{blue} %~%f] [%F{green}👽 $(get_ip_address)%f]
+<-[%F{red}$USER%f%F{yellow}@%f%F{red}$HOST%f] [%F{blue} %~%f] [%F{green}👽 $(get_ip_address)%f]
 -> '
 
 RPROMPT='[%F{red}%?%f]'
@@ -16,4 +16,3 @@ get_ip_address() {
     echo "%{$fg[red]%}No IP - ❌%{$reset_color%}"
   fi
 }
-
