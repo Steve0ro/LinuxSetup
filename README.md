@@ -6,5 +6,5 @@
 
 # How to run?
 
-    - `git clone https://github.com/steve0ro/linuxsetup/`
-    - ` bash setup.sh && bash python_install.sh `
+- `git clone https://github.com/steve0ro/linuxsetup/`
+- `bash setup.sh && bash python_install.sh `
