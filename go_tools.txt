@@ -1,0 +1,16 @@
+github.com/jaeles-project/gospider@latest
+github.com/bitquark/shortscan/cmd/shortscan@latest
+github.com/ffuf/ffuf/v2@latest
+github.com/OJ/gobuster/v3@latest
+github.com/projectdiscovery/katana/cmd/katana@latest
+github.com/tomnomnom/anew@latest
+github.com/tomnomnom/gf@latest
+github.com/tomnomnom/httprobe@latest
+github.com/tomnomnom/meg@latest
+github.com/tomnomnom/whatweb@latest
+github.com/owasp-amass/amass/v4/...@master
+github.com/projectdiscovery/dnsx/cmd/dnsx@latest
+github.com/projectdiscovery/httpx/cmd/httpx@latest
+github.com/projectdiscovery/notify/cmd/notify@latest
+github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+github.com/s0md3v/smap/cmd/smap@latest

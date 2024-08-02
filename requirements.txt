@@ -1,0 +1,14 @@
+pdftotext
+pwn
+evtx2es
+mitmproxy2swagger
+wfuzz
+arjun
+tesseract
+pwntools
+impacket
+git-dumper
+requests
+pysnmp-lextudio==5.0.31
+colorama
+xlsxgrep
